@@ -11,6 +11,7 @@ test('register@1',async({page})=>{
     const Firstname=Reg.generateRandomFirstname()
     const Lastname=Reg.generateRandomLastname()
     const Email=Reg.generateRandomEmail()
+    await page.waitForTimeout(5000)
     const Password=Reg.generateRandomPassword(8)
     await Reg.register(Firstname,Lastname,Email,Password,false,true)
     await Reg.isRegistrationSuccessful()
